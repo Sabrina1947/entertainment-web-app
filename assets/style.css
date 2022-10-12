@@ -162,15 +162,128 @@
 }
 /* Medi@ queries */
 
-/* smartphone :{
-    width: 375px
-    height: 667px
+/*  Tablette */
+@media (max-width: 768px) {
 
-/*  Tablette :{
-    width: 768px
-    height: 1024px
+    
+}
 
-/*  Desktop home FULL:{
-    width: 1440px
-    height: 2105px
+/*  Mobile  */
+@media (max-width: 374px) {
 
+    #trends {
+    background-color: var(--Dark--blue);
+    width: 1305px;
+    height: 240px;
+}
+
+.t-h2 {
+    height: 25px;
+    width: 76px;
+    color: var(--White);
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.m-16 {
+    margin-left: 16px;
+}
+
+.mt-24{
+    margin-top: 24px;
+}
+
+.mr-3 {
+    margin-right: 3px;
+}
+
+.posit-a {
+    position: absolute;
+}
+
+/* DIV container card*/
+.trend {
+    width: 240px;
+    height: 140px;
+    position: relative;
+    /* left: -88px;
+    top: 71px; */
+}
+
+/* image covering container card*/
+.trend-img {
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* div covering upper card*/
+.trend-book {
+    width: 100%;
+    height: 50%;
+    position: abosolute;
+}
+/* background bookmark*/
+.bookmark-circle {
+    height: 32px;
+    width: 32px;
+    background-color: var(--Semi-dark-blue);
+    opacity: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 167px;
+    top: 10px;
+}
+
+/* bookmark*/
+.bookmark-empty {
+    box-sizing: border-box;
+    position: absolute;
+    width: 11.67px;
+    height: 14px;
+    left: 179px;
+    top: 17px;
+    color: 1.5px solid white;
+}
+
+.trend-overall {
+    width: 1305px;
+    height: 240px;
+    /* z-index: -1; */
+}
+
+.trend-info {
+    height: 38px;
+    width: 160px;
+    justify-content:flex-start;
+    align-items: baseline;
+    position: absolute;
+    left: Opx;
+    top: 90px;
+    z-index: 30;
+}
+
+.trend-details {
+    color: var(--White);
+    opacity: 75%;
+    size: 12px;
+    padding-left: 5px;
+    
+}
+.t-dot {
+    Width: 3px;
+    Height: 3px;
+    color: var(--White);
+    opacity: 50%;
+    margin: 5px;
+}
+
+.t-title {
+    font-weight: var(--font-weight-medium);
+    font-size: 15px;
+    color: var(--White);
+    padding-left: 5px;
+    width: 150px;
+
+}

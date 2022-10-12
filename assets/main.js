@@ -10,7 +10,7 @@ fetch('data.json')
         for ( movie of data) { 
             if(movie.isTrending === true) {
 // console.log(movie.thumbnail.regular.small)
-
+const globalCards = document.createElement("div");
 const card = document.createElement("div");
 const cardImage = document.createElement("img");
 const cardUpper = document.createElement("div");
@@ -25,7 +25,7 @@ const tRating = document.createElement("p");
 const smallDot = document.createElement("div")
 const smallDot2 = document.createElement("div")
 
-
+globalCards.classList.add("flex");
 card.classList.add("trend");
 cardImage.classList.add("trend-img");
 card.classList.add("m-16");
@@ -69,7 +69,9 @@ cardBody.appendChild(tTitle);
 card.appendChild(cardUpper);
 card.appendChild(cardBody);
 
-trends.appendChild(card);
+globalCards.appendChild(card);
+
+trends.appendChild(globalCards);
 
             }
             
