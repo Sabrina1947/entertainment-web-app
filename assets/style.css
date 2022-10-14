@@ -1,6 +1,11 @@
-* {
+*{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--Dark--blue);
+    font-weight: 100;
+    color: var(--White)  
 }
 
 :root {
@@ -17,75 +22,67 @@
 
 /* Flexbox setting */
 .flex { display: flex; }
+.flex-column {flex-direction: column;}
+.flex-row {flex-direction: row;}
 .flex-justify-center { justify-content: center; }
 .flex-align-center { align-items: center; }
 .flex-justify-between { justify-content: space-between; }
 .flex-justify-around { justify-content: space-around; }
-.flex-justify-center { justify-content: center; }
-.flex-justify-center { justify-content: center; }
 .flex-justify-end { justify-content: flex-end; }
 .flex-wrap { flex-wrap: wrap;}
 
-/* .border {
-    border: 1px solid blue;
+
+.scroll::-webkit-scrollbar 
+    {
+    display: none;
+    }
+
+.trending {
+    width: 1305px;
+    height: 240px;
 }
 
-.border-red {
-    border: 2px solid red;
+.t-h2 {
+    height: 25px;
+    width: 76px;
+    color: var(--White);
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
 }
 
-.border-green {
-    border: 2px solid green;
+.m-16 {
+    margin-left: 16px;
+} 
+
+.mt-24{
+    margin-top: 24px;
 }
 
-.border-yellow {
-    border: 1px solid yellow;
+.mr-3 {
+    margin-right: 3px;
+}
+
+/* DIV container card*/
+.trend {
+    width: 240px;
+    height: 140px;
+    position: relative;
+    top: 18px; 
+    background-color: transparent;
+}
+
+/* .card-space {
+    margin-right: 16px; 
+    padding-right: 30px;
+    
 } */
 
-#trends {
-    background-color: var(--Dark--blue);
-    width: 1305px;
-    height: 240px;
-}
-
-.t-h2 {
-    height: 25px;
-    width: 76px;
-    color: var(--White);
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-}
-
-.m-16 {
-    margin-left: 16px;
-}
-
-.mt-24{
-    margin-top: 24px;
-}
-
-.mr-3 {
-    margin-right: 3px;
-}
-
-.posit-a {
-    position: absolute;
-}
-
-/* DIV container card*/
-.trend {
-    width: 240px;
-    height: 140px;
-    position: relative;
-    left: -88px;
-    top: 71px;
-}
-
 /* image covering container card*/
 .trend-img {
     height: 100%;
+    width: 100%;
     border-radius: 8px;
 }
 
@@ -103,7 +100,7 @@
     opacity: 50%;
     border-radius: 50%;
     position: absolute;
-    left: 167px;
+    left: 194px;
     top: 10px;
 }
 
@@ -113,26 +110,21 @@
     position: absolute;
     width: 11.67px;
     height: 14px;
-    left: 179px;
+    left: 204px;
     top: 17px;
-    color: 1.5px solid white;
-}
-
-.trend-overall {
-    width: 1305px;
-    height: 240px;
-    /* z-index: -1; */
+    background-color: transparent;
 }
 
 .trend-info {
     height: 38px;
     width: 160px;
-    justify-content:flex-start;
+    justify-content: space-between;
     align-items: baseline;
     position: absolute;
     left: Opx;
     top: 90px;
     z-index: 30;
+    background-color: transparent;
 }
 
 .trend-details {
@@ -140,15 +132,11 @@
     opacity: 75%;
     size: 12px;
     padding-left: 5px;
-    
+    background-color: transparent;  
 }
-.t-dot {
-    Width: 3px;
-    Height: 3px;
-    color: var(--White);
-    opacity: 50%;
-    margin: 5px;
-}
+ .t-dot {
+    background-color: transparent;
+} 
 
 .t-title {
     font-weight: var(--font-weight-medium);
@@ -156,134 +144,141 @@
     color: var(--White);
     padding-left: 5px;
     width: 150px;
-
-    /* margin-left: -30px;
-    margin-top: 4px; */
+    background-color: transparent;
 }
-/* Medi@ queries */
 
-/*  Tablette */
-@media (max-width: 768px) {
+    /* Tablette */
+
+/*Media queries */
+@media (min-width: 769px) {
+
+    .trending {
+        width: 2594px;
+        height: 379px;
+    }    
+
+    .t-h2 {
+        height: 40px;
+        width: 132px;
+        font-size: 32px;
+    }
+    
+    .m-16 {
+        margin-left: 30px;
+    }
+    
+    .mt-24{
+        margin-top: 30px;
+    }
+    
+    .mr-3 {
+        margin-right: 3px; /*a voir */
+    }
+        
+    /* DIV container card*/
+    .trend {
+        width: 470px;
+        height: 230px;
+        position: relative;
+        right: 0;
+    }
+    
+    /* .card-space {
+          padding-right: 0px;
+    } */
 
     
-}
-
-/*  Mobile  */
-@media (max-width: 374px) {
-
-    #trends {
-    background-color: var(--Dark--blue);
-    width: 1305px;
-    height: 240px;
-}
-
-.t-h2 {
-    height: 25px;
-    width: 76px;
-    color: var(--White);
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-}
-
-.m-16 {
-    margin-left: 16px;
-}
-
-.mt-24{
-    margin-top: 24px;
-}
-
-.mr-3 {
-    margin-right: 3px;
-}
-
-.posit-a {
-    position: absolute;
-}
-
-/* DIV container card*/
-.trend {
-    width: 240px;
-    height: 140px;
-    position: relative;
-    /* left: -88px;
-    top: 71px; */
-}
-
-/* image covering container card*/
-.trend-img {
-    height: 100%;
-    border-radius: 8px;
-}
-
-/* div covering upper card*/
-.trend-book {
-    width: 100%;
-    height: 50%;
-    position: abosolute;
-}
-/* background bookmark*/
-.bookmark-circle {
-    height: 32px;
-    width: 32px;
-    background-color: var(--Semi-dark-blue);
-    opacity: 50%;
-    border-radius: 50%;
-    position: absolute;
-    left: 167px;
-    top: 10px;
-}
-
-/* bookmark*/
-.bookmark-empty {
-    box-sizing: border-box;
-    position: absolute;
-    width: 11.67px;
-    height: 14px;
-    left: 179px;
-    top: 17px;
-    color: 1.5px solid white;
-}
-
-.trend-overall {
-    width: 1305px;
-    height: 240px;
-    /* z-index: -1; */
-}
-
-.trend-info {
-    height: 38px;
-    width: 160px;
-    justify-content:flex-start;
-    align-items: baseline;
-    position: absolute;
-    left: Opx;
-    top: 90px;
-    z-index: 30;
-}
-
-.trend-details {
-    color: var(--White);
-    opacity: 75%;
-    size: 12px;
-    padding-left: 5px;
+    /* background bookmark*/
+    .bookmark-circle {
+        left: 406px; 
+    }
     
-}
-.t-dot {
-    Width: 3px;
-    Height: 3px;
-    color: var(--White);
-    opacity: 50%;
-    margin: 5px;
+    /* bookmark*/
+    .bookmark-empty {
+        left: 415px;
+    }
+    
+    .trend-info {
+        height: 52px;
+        width: 250px;
+        left: 5px;
+        top: 150px;
+    }
+    
+       .trend-details {
+        size: 15px;
+        
+    }
+    
+    .t-title {
+        font-size: 24px;
+        width: 240px;
+    }
 }
 
-.t-title {
-    font-weight: var(--font-weight-medium);
-    font-size: 15px;
-    color: var(--White);
-    padding-left: 5px;
-    width: 150px;
+/* desktop */
+/*Media queries */
+@media (min-width: 1240px) {
 
+    .trending {
+        width: 2594px;
+        height: 379px;
+    }    
+
+    .t-h2 {
+        height: 40px;
+        width: 132px;
+        font-size: 32px;
+    }
+    
+    .m-16 {
+        margin-left: 40px;
+    }
+    
+    .mt-24{
+        margin-top: 40px;
+    }
+    
+    .mr-3 {
+        margin-right: 3px; /*a voir */
+    }
+        
+    /* DIV container card*/
+    .trend {
+        width: 470px;
+        height: 230px;
+        position: relative;
+        right: 0;
+    }
+    
+    /* .card-space {
+        padding-right: 0px;
+    }
+     */
+    /* background bookmark*/
+    .bookmark-circle {
+        left: 406px; 
+    }
+    
+    /* bookmark*/
+    .bookmark-empty {
+        left: 415px;
+    }
+    
+    .trend-info {
+        height: 52px;
+        width: 250px;
+        left: 5px;
+        top: 150px;
+    }
+    
+       .trend-details {
+        size: 15px;
+        
+    }
+    
+    .t-title {
+        font-size: 24px;
+        width: 240px;
+    }
 }
