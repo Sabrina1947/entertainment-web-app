@@ -1,12 +1,20 @@
 
+const data = ".data.json/title";
 
-fetch("data.json",
-{ method: 'GET' })
+const main = document.getElementById("main");
+main.innerHTML = "cards";
+
+fetch(data)
 
 .then(response => response.json())
-.then(data => {
-    console.log(data.title)
-    */document.getElementById("title");*/
+.then(title => main.innerHTML = getListOfTitre(title));
+
+const getListOfTitre = (title) => {
+    const titre = title.map((title)).filter(title)
+    return `${titre}`;
+  };
+
+/*
 
     if (res.ok) {
     return res.data();
@@ -18,3 +26,6 @@ fetch("data.json",
 })
 .then(res => console.log(res))
 .catch(err => console.log(`Erreur : ${err}`));
+
+
+*/
