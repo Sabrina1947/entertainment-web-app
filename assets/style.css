@@ -1,5 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background-color: var(--Dark--blue);
+}
 :root {
-    
+
     --Red: hsl(0, 97%, 63%);
     --White: hsl(0, 0%, 100%);
     --Dark--blue: hsl(223, 30%, 9%);
@@ -37,6 +43,7 @@
 */
 
 .searchbar {
+background-color: var(--Dark--blue);
 display: inline-flex;
 position: absolute;
 width: 257px;
@@ -45,17 +52,27 @@ left: 16px;
 top: 80px;
 }
 
-.input {
-font-family: 'Outfit';
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 24px;
+.search {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
 
-color: #FFFFFF;
+    color: #FFFFFF;
 
-mix-blend-mode: normal;
-opacity: 0.5;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+input {
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 26px;
+    position: absolute;
+    border: 0;
+}
+
+svg {
+position: relative;
 }
 
 @media screen and (min-width:768px)
