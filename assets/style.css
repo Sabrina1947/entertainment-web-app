@@ -58,23 +58,26 @@ mix-blend-mode: normal;
 opacity: 0.5;
 }
 
+@media screen and (min-width:768px)
+{
 
+.search {
+    width: 768px;
+    height: 1024px;
+}
 
+.search {
+    display:block;
+}
+}
+@media screen and (min-width:1440px)
+{
+.searchbar {
+    width: 100%;
+}
 
-
-/* 
-     <ul id="myUL">
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-      
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-      
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-
-      </ul> 
-*/
-      
-
+.search {
+    width: 1440px;
+    height: 2105px;
+}
+}
