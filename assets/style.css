@@ -34,167 +34,23 @@ body{
     background-color: var(--Dark--blue);
     font-family: 'Outfit', sans-serif;
     font-weight: 100;
+    
     /*  color: var(--White); */
 }
 
 /* le smartphone */
 
-/*searchbar*/
-
-.searchbar {
-    /* margin-left: 150px; */
-    /* margin-bottom: 150px; */
-    display: inline-flex;
-    position: absolute;
-    width: 257px;
-    height: 24px;
-    left: 16px;
-    top: 80px;
-}
-    
-#search {
-    background-color:var(--Dark--blue);
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    mix-blend-mode: normal;
-    opacity: 0.5;
-}
-
-input {
-    padding-left: 20px;
-    font-size: 16px;
-    line-height: 26px;
-    position: absolute;
-    border: 0;
-}
-
-/*trending*/
-
-svg {
-position: relative;
-}
-
-.scroll::-webkit-scrollbar 
-    {
-    display: none;
-    overflow: hidden;
-    }
-
-.trending {
-    width: 1305px;
-    height: 240px;
-}
-
-.t-h2 {
-    height: 25px;
-    width: 76px;
-    color: var(--White);
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-}
-
-.m-16 {
-    margin-left: 16px;
-} 
-
-.mt-24{
-    margin-top: 24px;
-}
-
-.mr-3 {
-    margin-right: 3px;
-}
-
-/* DIV container card*/
-.trend {
-    width: 240px;
-    height: 140px;
-    position: relative;
-    top: 18px; 
-    background-color: transparent;
-}
-
-/* image covering container card*/
-.trend-img {
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* div covering upper card*/
-.trend-book {
-    width: 100%;
-    height: 50%;
-    position: abosolute;
-}
-/* background bookmark*/
-.bookmark-circle {
-    height: 32px;
-    width: 32px;
-    background-color: var(--Semi-dark-blue);
-    opacity: 50%;
-    border-radius: 50%;
-    position: absolute;
-    left: 194px;
-    top: 10px;
-}
-
-/* bookmark*/
-.bookmark-empty {
-    box-sizing: border-box;
-    position: absolute;
-    width: 11.67px;
-    height: 14px;
-    left: 204px;
-    top: 17px;
-    background-color: transparent;
-}
-
-.trend-info {
-    height: 38px;
-    width: 160px;
-    justify-content: space-between;
-    align-items: baseline;
-    position: absolute;
-    left: Opx;
-    top: 90px;
-    z-index: 30;
-    background-color: transparent;
-}
-
-.trend-details {
-    color: var(--White);
-    opacity: 75%;
-    size: 12px;
-    padding-left: 5px;
-    background-color: transparent;  
-}
- .t-dot {
-    background-color: transparent;
-} 
-
-.t-title {
-    font-weight: var(--font-weight-medium);
-    font-size: 15px;
-    color: var(--White);
-    padding-left: 5px;
-    width: 150px;
-    background-color: transparent;
-}
-
 /*nav*/
 
 .container {
+    max-width: 769px;
     flex-direction: column;
 }
 
 nav {
     position: absolute;
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
     height: 56px;
     top: 0px;
     background-color: var(--Semi-dark-blue);
@@ -253,18 +109,170 @@ main {
     margin-top: 100px;
 }
 
+/*searchbar*/
+
+.searchbar {
+    /* margin-left: 150px; */
+    /* margin-bottom: 150px; */
+    display: inline-flex;
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    left: 16px;
+    top: 80px;
+}
+    
+#search {
+    background-color:var(--Dark--blue);
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+input {
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 26px;
+    position: absolute;
+    border: 0;
+}
+
+/*trending*/
+
+svg {
+position: relative;
+}
+
+.scrolling-wrapper{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.scrolling-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.trending {
+    width: 100%;
+}
+
+.t-h2 {
+
+    height: 25px;
+    width: 76px;
+    color: var(--White);
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.m-16 {
+    margin-left: 16px;
+} 
+
+.mt-24{
+    margin-top: 24px;
+}
+
+.mr-3 {
+    margin-right: 3px;
+}
+
+.global-cards{
+    height: 160px;
+}
+
+/* DIV container card*/
+.trend {
+    width: 240px;
+    position: relative;
+    top: 18px; 
+    background-color: transparent;
+}
+
+/* image covering container card*/
+.trend-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* div covering upper card*/
+.trend-book {
+    width: 100%;
+    height: 50%;
+    position: abosolute;
+}
+
+/* background bookmark*/
+.bookmark-circle {
+    height: 32px;
+    width: 32px;
+    background-color: var(--Semi-dark-blue);
+    opacity: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 194px;
+    top: 10px;
+}
+
+/* bookmark*/
+.bookmark-empty {
+    box-sizing: border-box;
+    position: absolute;
+    width: 11.67px;
+    height: 14px;
+    left: 204px;
+    top: 17px;
+    background-color: transparent;
+}
+
+.trend-info {
+    height: 38px;
+    width: 160px;
+    justify-content: space-between;
+    align-items: baseline;
+    position: absolute;
+    left: Opx;
+    top: 90px;
+    z-index: 30;
+    background-color: transparent;
+}
+
+.trend-details {
+    color: var(--White);
+    opacity: 75%;
+    size: 12px;
+    padding-left: 5px;
+    background-color: transparent;  
+}
+
+.t-dot {
+    background-color: transparent;
+} 
+
+.t-title {
+    font-weight: var(--font-weight-medium);
+    font-size: 15px;
+    color: var(--White);
+    padding-left: 5px;
+    width: 150px;
+    background-color: transparent;
+}
+
 /* cards */
 
 .section-cards{
-    width: 490px;
+    max-width: 100%;
     background-color: var(--Dark--blue);
     color: var(--White);
     font-family: var(--font-family); 
 }
 
 .card{
-    width: 200px;
-    height: 154px;
+    width: 164px;
+    height: 110px;
     margin-bottom: 0.5em;
 }
 
@@ -282,7 +290,6 @@ main {
 .TV:before{
     content:url("/assets/icon-category-tv.svg") ;
     padding-right: 5px;
-
 }
 
 .info{
@@ -291,7 +298,7 @@ main {
     display: flex;
 }
 
-h2{
+h2 {
     margin-left: 20px;
     font-size: 20px;
     line-height: 40px;
@@ -370,8 +377,7 @@ h4 .title {
 /*trending*/
 
     .trending {
-        width: 2594px;
-        height: 379px;
+        width: 100%;
     }    
     
     .t-h2 {
@@ -391,15 +397,17 @@ h4 .title {
     .mr-3 {
         margin-right: 3px; /*a voir */
     }
+
+    .global-cards{
+        height: 230px;
+    }
         
     /* DIV container card*/
     .trend {
         width: 470px;
-        height: 230px;
         position: relative;
         right: 0;
     }
-    
     
     /* background bookmark*/
     .bookmark-circle {
@@ -550,7 +558,6 @@ h4 .title {
     .logo-size {
         width: 32px;
         height: 25.6px;
-
     }
 
     nav img {
@@ -568,8 +575,7 @@ h4 .title {
 /*Trending*/
 
     .trending {
-        width: 2594px;
-        height: 379px;
+        width: 100%;
     }    
 
     .t-h2 {
@@ -589,11 +595,14 @@ h4 .title {
     .mr-3 {
         margin-right: 3px; /*a voir */
     }
+
+    .global-cards{
+        height: 230px;
+    }
         
     /* DIV container card*/
     .trend {
         width: 470px;
-        height: 230px;
         position: relative;
         right: 0;
     }
@@ -621,21 +630,20 @@ h4 .title {
     
        .trend-details {
         size: 15px;
-        
     }
     
     .t-title {
         font-size: 24px;
         width: 240px;
     }
+
 /*section cards*/
     
     h2{
-    margin-left: 20px;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -0.5px;
-
+        margin-left: 20px;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -0.5px;
     }
   
     main{

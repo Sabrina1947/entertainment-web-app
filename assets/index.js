@@ -21,11 +21,11 @@ fetch("../data.json")
       contenuHtml +=
         "<div class='info'><p class='date'>" + data.year + "</p>";
       contenuHtml +=
-        "<p>" + "&#x2022 ";
+        "<p>" + "&#x2022" + "</p>";
       contenuHtml +=
-        "<p " + data.category + "'>" + data.category + "</p>";// ici on a mis en class les categorie soit serie tv soit film on la paramettré dans le css
+        "<p class='" + data.category + "'>" + data.category + " . " + "</p>"// ici on a mis en class les categorie soit serie tv soit film on la paramettré dans le css
       contenuHtml +=
-        "<p>" + "&#x2022 ";
+        "<p>" + "&#x2022" + "</p>";
       contenuHtml += "<p class='public'>" + data.rating + "</p></div>";
       contenuHtml += "<h4 class='title'>" + data.title + "</h4>";
 
@@ -62,8 +62,7 @@ fetch("../data.json")
           const smallDot2 = document.createElement("div");
   
           globalCards.classList.add("flex");
-          globalCards.classList.add("card-space");
-          globalCards.classList.add("scroll");
+          globalCards.classList.add("global-cards");
           card.classList.add("trend");
           cardImage.classList.add("trend-img");
           card.classList.add("m-16");
