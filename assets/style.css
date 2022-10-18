@@ -30,25 +30,6 @@
 .flex-justify-around { justify-content: space-around; }
 .flex-justify-end { justify-content: flex-end; }
 
-.scroll::-webkit-scrollbar 
-    {
-    display: none;
-    }
-
-.trending {
-    width: 1305px;
-    height: 240px;
-}
-
-.t-h2 {
-    height: 25px;
-    width: 76px;
-    color: var(--White);
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-}
 .flex-start { justify-content: flex-start; }
 
 body{
@@ -82,13 +63,13 @@ body{
     opacity: 0.5;
 }
 
-input {
+/* input {
     padding-left: 20px;
     font-size: 16px;
     line-height: 26px;
     position: absolute;
     border: 0;
-}
+} */
 
 /*trending*/
 
@@ -96,15 +77,18 @@ svg {
 position: relative;
 }
 
-.scroll::-webkit-scrollbar 
-    {
-    display: none;
-    overflow: hidden;
+/* TRENDING MOBILE DEFAULT*/
+
+.scrolling-wrapper {
+    /* height: 240px; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* white-space: nowrap; */
     }
 
 .trending {
-    width: 1305px;
-    height: 240px;
+    width: 490px;
+    /* height: 240px; */
 }
 
 .t-h2 {
@@ -130,9 +114,13 @@ position: relative;
 }
 
 /* DIV container card*/
+
+.global-cards {
+    height: 160px;
+}
+
 .trend {
     width: 240px;
-    height: 140px;
     position: relative;
     top: 18px; 
     background-color: transparent;
@@ -332,95 +320,108 @@ h4 .title {
 .rec{
     margin-bottom: 0.5em;
 }
-.m-16 {
-    margin-left: 16px;
-} 
 
-.mt-24{
-    margin-top: 24px;
+/* SIGN-UP MOBILE*/
+
+.cont-sign {
+    height: 600px;
+    align-items: center;
 }
 
-.mr-3 {
-    margin-right: 3px;
-}
-
-/* DIV container card*/
-.trend {
-    width: 240px;
-    height: 140px;
+.relative {
     position: relative;
-    top: 18px; 
-    background-color: transparent;
 }
 
-/* image covering container card*/
-.trend-img {
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
+.right-80 {
+    right: 80px;
 }
 
-/* div covering upper card*/
-.trend-book {
-    width: 100%;
-    height: 50%;
-    position: abosolute;
+.right-92 {
+    right: 92px;
 }
-/* background bookmark*/
-.bookmark-circle {
-    height: 32px;
+
+.right-69 {
+    right: 69px;
+}
+
+.icon-home {
+    position: relative;
     width: 32px;
-    background-color: var(--Semi-dark-blue);
-    opacity: 50%;
-    border-radius: 50%;
-    position: absolute;
-    left: 194px;
-    top: 10px;
+    height: 25.6px;
+    top: 48px;
 }
 
-/* bookmark*/
-.bookmark-empty {
-    box-sizing: border-box;
-    position: absolute;
-    width: 11.67px;
-    height: 14px;
-    left: 204px;
-    top: 17px;
-    background-color: transparent;
-}
-
-.trend-info {
-    height: 38px;
-    width: 160px;
-    justify-content: space-between;
-    align-items: baseline;
-    position: absolute;
-    left: Opx;
-    top: 90px;
-    z-index: 30;
-    background-color: transparent;
-}
-
-.trend-details {
+.heading{
+    font-family: 'Outfit';
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
     color: var(--White);
-    opacity: 75%;
-    size: 12px;
-    padding-left: 5px;
-    background-color: transparent;  
+    margin-top: 24px;
+    margin-bottom: 30px;
 }
- .t-dot {
-    background-color: transparent;
-} 
 
-.t-title {
-    font-weight: var(--font-weight-medium);
+.signup {
+    position: relative;
+    width: 327px;
+    height: 420px;
+    top: 132px;
+    background-color: var(--Semi-dark-blue);
+    border-radius: 10px;
+}
+
+.login {
+    position: relative;
+    width: 327px;
+    height: 365px;
+    top: 132px;
+    background-color: var(--Semi-dark-blue);
+    border-radius: 10px;
+}
+
+.form-text {
     font-size: 15px;
     color: var(--White);
-    padding-left: 5px;
-    width: 150px;
-    background-color: transparent;
+    font-family: var(--font-weight-medium);
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
 }
 
+.label {
+    line-height: 19px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    padding: 10px;
+}
+
+.signup-input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--White);
+    width: 279px;
+    border-color: var(--Greyish-blue);
+}
+
+.color-white {
+    color: var(--White);
+}
+
+.bgborder-red {
+    height: 48px;
+    width: 279px;
+    background-color: var(--Red);
+    border: var(--Red);
+    border-radius: 6px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.red {
+    color: var(--Red);
+}
 /* tablette */
 
 /*Media queries */
@@ -486,8 +487,8 @@ h2{
 }
     
 .trending {
-    width: 2594px;
-    height: 379px;
+    width: 620px;
+    /*height: 379px; */
 }    
 
 .t-h2 {
@@ -509,9 +510,13 @@ h2{
 }
     
 /* DIV container card*/
+
+.global-cards {
+    height: 230px;
+}
 .trend {
     width: 470px;
-    height: 230px;
+    /* height: 230px; */
     position: relative;
     right: 0;
 }
@@ -543,7 +548,13 @@ h2{
     width: 240px;
 }
 
-
+.signup {
+    width: 400px;
+    height: 418px;
+}
+.login {
+    width: 400px;
+    height: 373px;
 } 
 
 /* desktop */
@@ -597,11 +608,11 @@ h2{
 
 /*trending*/
 
-    .trending {
+    /* .trending {
         width: 2594px;
         height: 379px;
     }    
-    
+     */
     .t-h2 {
         height: 40px;
         width: 132px;
@@ -621,9 +632,13 @@ h2{
     }
         
     /* DIV container card*/
+    .global-cards {
+        height: 160px;
+    }
+
     .trend {
         width: 470px;
-        height: 230px;
+        /* height: 230px; */
         position: relative;
         right: 0;
     }
@@ -712,6 +727,8 @@ h2{
     .rec{
         margin-bottom: 1.5em;
     }
+
+
 
 }
 
@@ -920,20 +937,10 @@ h2{
     .rec{
         margin-bottom: 1.5em;
     }
+    /*SIGN-UP*/
+   
 }
   
-
-  
-
-/* desktop */
-/*Media queries */
-@media (min-width: 1240px) {
-
-    .trending {
-        width: 2594px;
-        height: 379px;
-    }    
-
     .t-h2 {
         height: 40px;
         width: 132px;
@@ -974,20 +981,4 @@ h2{
         left: 415px;
     }
     
-    .trend-info {
-        height: 52px;
-        width: 250px;
-        left: 5px;
-        top: 150px;
-    }
-    
-       .trend-details {
-        size: 15px;
-        
-    }
-    
-    .t-title {
-        font-size: 24px;
-        width: 240px;
-    }
-}
+

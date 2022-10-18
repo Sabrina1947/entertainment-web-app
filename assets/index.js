@@ -62,8 +62,8 @@ fetch("../data.json")
           const smallDot2 = document.createElement("div");
   
           globalCards.classList.add("flex");
-          globalCards.classList.add("card-space");
-          globalCards.classList.add("scroll");
+          // globalCards.classList.add("card-space");
+          globalCards.classList.add("global-cards");
           card.classList.add("trend");
           cardImage.classList.add("trend-img");
           card.classList.add("m-16");

@@ -5,20 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title>Entertainment web app - Login</title>
+  <link rel="stylesheet" href="assets/style.css">
+  
+  <title>Frontend Mentor | Entertainment web app</title>
 </head>
 <body>
-  
-
-
-  Login
-
-  Email address
-  Password
-
-  Login to your account
-
-  Don't have an account? Sign Up
-  
+  <div class="flex flex-column cont-sign">
+    <div class="icon-home">
+      <svg width="33" height="27" xmlns="http://www.w3.org/2000/svg"><path d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z" fill="#FC4747"/></svg>
+    </div>
+    <form action="" class="login flex flex-column flex-align-center color-white">
+      <h2 class="heading color-white relative right-92">Login</h2>
+      <label for="email" class="label form-text relative right-80">Email address</label>
+      <input type="email" class="signup-input">
+      <label for="password" class="label form-text relative right-92">Password</label>
+      <input type="password" name="password" id="" class="signup-input">
+      <button type="submit" class="color-white bgborder-red form-text">Login to your account</button>
+      <div class="flex flex-justify-evenly">
+        <p class="color-white form-text">Don't have an account? <a href="" class="red"> Signup</a></p>
+      </div>
+    </form>
+  </div> 
 </body>
 </html>
