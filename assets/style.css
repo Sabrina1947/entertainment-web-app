@@ -5,28 +5,25 @@
 }
 
 :root {
-    
+
     --Red: hsl(0, 97%, 63%);
     --White: hsl(0, 0%, 100%);
     --Dark--blue: hsl(223, 30%, 9%);
-    --Greyish-blue: hsl(223, 23%, 46%);
+    --Greyish-blue-: hsl(223, 23%, 46%);
     --Semi-dark-blue: hsl(223, 36%, 14%);
-    --Light-grey: rgb(187, 187, 187);
     --font-family: 'Outfit', sans-serif;
-    --font-weight-light : 100;
-    --font-weight-medium : 300;
-    --font-weight-large : 500;
-
+    --font-weight-light : 300;
+    --font-weight-medium : 500;
 }
 
 /* Flexbox setting */
 .flex { display: flex; }
-.flex-wrap {flex-wrap: wrap;}
 .flex-justify-center { justify-content: center; }
 .flex-align-center { align-items: center; }
 .flex-justify-between { justify-content: space-between; }
-.flex-justify-evenly { justify-content: space-evenly; }
 .flex-justify-around { justify-content: space-around; }
+.flex-justify-center { justify-content: center; }
+.flex-justify-center { justify-content: center; }
 .flex-justify-end { justify-content: flex-end; }
 .flex-start { justify-content: flex-start; }
 
@@ -682,5 +679,3 @@ h4 .title {
     }
 }
   
-
-
