@@ -54,11 +54,9 @@ fetch("../data.json")
       //console.log(data.title);
       for (movie of data) {
         if (movie.isTrending === true) {
-          // console.log(movie.thumbnail.regular.small)
           const globalCards = document.createElement("div");
           const card = document.createElement("div");
           const cardImage = document.createElement("img");
-          // const cardUpper = document.createElement("div");
           const tBookmarkBg = document.createElement("div");
           const tBookmark = document.createElement("img");
   
@@ -76,7 +74,6 @@ fetch("../data.json")
           card.classList.add("trend");
           cardImage.classList.add("trend-img");
           card.classList.add("m-16");
-          // cardUpper.classList.add("trend-book");
           tBookmarkBg.classList.add("bookmark-circle");
           tBookmark.classList.add("bookmark-empty"); //to look at further
   
@@ -103,7 +100,6 @@ fetch("../data.json")
           }
   
           tBookmark.src = "assets/icon-bookmark-empty.svg";
-          //cardImage.src = movie.thumbnail.regular.small;
           tTitle.innerText = movie.title;
           tYear.innerText = movie.year;
           tRating.innerText = movie.rating;
@@ -122,7 +118,6 @@ fetch("../data.json")
           cardBody.appendChild(tRating);
           cardBody.appendChild(tTitle);
   
-          // card.appendChild(cardUpper);
           card.appendChild(cardBody);
   
           globalCards.appendChild(card);
