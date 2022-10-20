@@ -26,21 +26,35 @@
   
       </nav>
        <main>
-      <section class="searchbar">
+        <section class="searchbar">
 
-        <div class="flex m-16">
-          <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M27.613 25.72 23.08 21.2a10.56 10.56 0 0 0 2.253-6.533C25.333 8.776 20.558 4 14.667 4S4 8.776 4 14.667c0 5.89 4.776 10.666 10.667 10.666A10.56 10.56 0 0 0 21.2 23.08l4.52 4.533a1.333 1.333 0 0 0 1.893 0 1.333 1.333 0 0 0 0-1.893ZM6.667 14.667a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" fill="#FFF"/></svg>
-          <input type="text" id="search" placeholder="Search for movies or TV series">
-        </div>
-  
-      </section>
+          <div class="search-wrapper flex">
+            <label for="search"><svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M27.613 25.72 23.08 21.2a10.56 10.56 0 0 0 2.253-6.533C25.333 8.776 20.558 4 14.667 4S4 8.776 4 14.667c0 5.89 4.776 10.666 10.667 10.666A10.56 10.56 0 0 0 21.2 23.08l4.52 4.533a1.333 1.333 0 0 0 1.893 0 1.333 1.333 0 0 0 0-1.893ZM6.667 14.667a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" fill="#FFF"/></svg></label>
+            <input class="input-search" type="search" id="search" onclick="hideCards()" placeholder="Search for movies or tv series" data-search>
+          </div>
+          <div class="movie-cards flex flex-wrap flex-justify-evenly" data-movie-cards-container></div>
+          <template class="" data-movie-template>
+            <div class="cards">
+                <img class="image" data-image src="">
+                <div class="card-info flex">
+                  <p class="year" data-year></p>
+                  <p> &#x2022 </p>
+                  <img class="cat-icon" data-icon>
+                  <p class="category" data-category></p>
+                  <p> &#x2022 </p>
+                  <p class="rating" data-rating></p>
+                </div>
+                <h3 class="title" data-title></h3>
+              </div>
+          </template>
+        </section>
       
-      <section class="trending">
+      <section class="trending" id="trend2">
           <h2 class="flex m-16 mt-24 t-h2">Trending</h2>     
           <div id="trends" class="flex scrolling-wrapper"></div>   
       </section>
   
-      <section class="section-cards">
+      <section class="section-cards" id="hide-cards">
         <h2 class="flex m-16 mt-24 t-h2">Recommended for you</h2>
         <div id="cards" class="flex flex-wrap flex-justify-evenly"></div>
       </section>
@@ -48,6 +62,8 @@
     </container>  
 </body>
 <script type="text/javascript" src="../assets/index.js"></script>
-<script type="text/javascript" src="main.js"></script>
+<!-- <script type="text/javascript" src="main.js"></script> -->
+<!-- <script type="text/javascript" src="searchbar.js"></script> -->
+
 </html>
 

@@ -101,36 +101,68 @@ nav img {
     margin-right: 20px;
 }
 
+/* search bar */
 
-/* main {
-    padding-top: 100px;
+.searchbar{
+    margin-top: 30px;
+}
+
+.search-wrapper {
+    flex-direction: row;
+    margin-left: 20px;
+    gap: 10px;
+}
+
+.input-search {
+    background-color: var(--Dark--blue);
+    color: #FFFFFF;
+    border-style: none; 
+    width: 200px;
+}
+
+input:focus {
+    border-style: none;
+    outline: 0px; 
+}
+
+.movie-cards {
+    gap: 50px;
+    margin-right: 25px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+/*search result cards image*/
+
+img.image {
+    width: 164px;
+    height: 110px;
+    border-radius: 10px;
+}
+
+/* h4.title {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
 } */
 
-/*searchbar*/
-
-.searchbar {
-    /* margin-left: 150px; */
-    /* margin-bottom: 150px; */
-    width: 100%;
-    padding-top: 25px;
-    /*height: 24px;*/
-}
-    
-#search {
-    background-color:var(--Dark--blue);
-    font-family: 'Outfit';
-    font-style: normal;
-    font-weight: 300;
-    mix-blend-mode: normal;
-    opacity: 0.5;
+p {
+    color:var(--White);
+    font-size: .8rem;
 }
 
-input {
-    padding-left: 20px;
-    font-size: 16px;
-    line-height: 26px;
-    position: absolute;
-    border: 0;
+.title{
+    /* margin-top: 50px; */
+    font-weight: var(--font-weight-medium);
+    padding-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.info {
+    flex-direction: row;
+}
+
+.hide {
+    display: none;
 }
 
 /*trending*/
@@ -150,9 +182,6 @@ position: relative;
     height: 0.5px;
 }
 
-
-
-
 .trending {
     width: 100%;
 }
@@ -167,7 +196,7 @@ position: relative;
 }
 
 .m-16 {
-    margin-left: 16px;
+    margin-left: 30px;
 } 
 
 .mt-24{
@@ -217,13 +246,13 @@ position: relative;
 }
 
 /* bookmark*/
-.bookmark-empty {
+.bookmark {
     box-sizing: border-box;
     position: absolute;
     width: 11.67px;
     height: 14px;
-    right: 10px;
-    top: 9px;
+    right: 18px;
+    top: 16px;
     background-color: transparent;
 }
 
@@ -279,6 +308,7 @@ position: relative;
     width: 164px;
     height: 110px;
     margin-bottom: 0.5em;
+    padding-bottom: 20px;
 }
 
 .picture{
@@ -350,14 +380,14 @@ h4 .title {
 
 /*searchbar*/
 
-    .searchbar{
+    /* .searchbar{
         padding-top: 65px;
         width: 320px;    
     }
     
     #search {
         display:block;
-    }
+    } */
 
 /*nav*/
 
@@ -504,24 +534,6 @@ h4 .title {
 /*Media queries */
 
 @media (min-width: 1240px) {
-
-    .red{
-        border: 2px solid red;
-    }
-
-/*searchbar*/
-
-    .searchbar {
-        color: var(--Dark--blue);
-        width: 100%;
-    }
-    
-    #search {
-        margin-left: 40px;
-        
-        
-        padding-left: 47px;
-    }
 
 /*nav*/
 

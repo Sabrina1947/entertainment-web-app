@@ -4,7 +4,7 @@ fetch("../data.json")
   .then((response) => response.json())
   .then((data) => {
     // Display my data in a loop
-    console.log(data);
+    //console.log(data);
     //console.log(data.title);
     for (movie of data) {
       if (movie.isTrending === true) {
