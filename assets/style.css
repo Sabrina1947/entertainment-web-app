@@ -103,7 +103,82 @@ nav img {
 
 /* search bar */
 
+/* search bar mobile*/
+
 .searchbar{
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-bottom: 30px;
+}
+
+.search-wrapper {
+    flex-direction: row;
+    margin-left: 30px;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+
+input {
+    background-color: var(--Dark--blue);
+    color: #FFFFFF;
+    border-style: none; 
+    width: 200px; 
+}
+
+input:focus {
+    border-style: none;
+    outline: 0px; 
+}
+
+/*search result cards*/
+
+.movie-cards {
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.image {
+    width: 164px;
+    height: 110px;
+    border-radius: 10px;
+}
+
+h3.title {
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: var(--font-weight-medium);
+}
+
+p {
+    color:var(--White);
+    font-size: .8rem;
+}
+
+.card-info {
+    flex-direction: row;
+}
+
+.card-info p{
+    padding-right: 5px;
+}
+
+.card-info img {
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    max-height: 12px;
+}
+
+.category {
+    max-height: 16px;
+}
+
+.hide {
+    display: none;
+}
+/*end search result cards*/
+
+/* .searchbar{
     margin-top: 30px;
 }
 
@@ -134,36 +209,36 @@ input:focus {
 
 /*search result cards image*/
 
-img.image {
+/* img.image {
     width: 164px;
     height: 110px;
     border-radius: 10px;
-}
+} */
 
 /* h4.title {
     font-size: 14px;
     font-weight: var(--font-weight-medium);
 } */
 
-p {
+/* p {
     color:var(--White);
     font-size: .8rem;
 }
 
 .title{
     /* margin-top: 50px; */
-    font-weight: var(--font-weight-medium);
+    /* font-weight: var(--font-weight-medium);
     padding-bottom: 20px;
     color: #FFFFFF;
-}
+} */
 
-.info {
+/* .info {
     flex-direction: row;
 }
 
 .hide {
     display: none;
-}
+}  */
 
 /*trending*/
 
@@ -251,8 +326,8 @@ position: relative;
     position: absolute;
     width: 11.67px;
     height: 14px;
-    right: 18px;
-    top: 16px;
+    right: 10px;
+    top: 9px;
     background-color: transparent;
 }
 
@@ -380,14 +455,20 @@ h4 .title {
 
 /*searchbar*/
 
-    /* .searchbar{
-        padding-top: 65px;
-        width: 320px;    
+
+    .image {
+        width: 220px;
+        height: 140px;
     }
-    
-    #search {
-        display:block;
-    } */
+
+    h3.title {
+        font-size: 18px;
+        font-weight: var(--font-weight-medium);
+    }
+
+    .card-info p{
+        padding-right: 5px;
+    }
 
 /*nav*/
 
@@ -534,6 +615,22 @@ h4 .title {
 /*Media queries */
 
 @media (min-width: 1240px) {
+
+/*search result cards mode DESKTOP*/
+
+    .cards {
+        max-width:280px;
+        padding-right: 40px;
+    }
+
+    .card-info p{
+        padding-right: 5px;
+    }
+
+    .image {
+        width: 280px;
+        height: 174px;
+    }
 
 /*nav*/
 

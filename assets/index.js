@@ -9,36 +9,41 @@ fetch("../data.json")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((data) => {
-      console.log(data.isBookmarked);
+      let bookmarked;
       let contenuHtml = `<div class="card">`;
       if (window.innerWidth >= 1240) {// ici on test la taille de la fenetre elle est superieur ou égale à 1240px.
+        if(localStorage.getItem(data.title) == "true"){
+          bookmarked = "./assets/icon-bookmark-full.svg";
+        }else{
+          bookmarked = "./assets/icon-bookmark-empty.svg";
+        }
         contenuHtml +=
          `<img class = "picture" src= "${data.thumbnail.regular.large}"/>
-          <div class = "bookmark-circle">
-          
+          <div onclick="addFavorites(this,'${data.title}')" class = "bookmark-circle">
+          <img class = "bookmark" src ="${bookmarked}"/>
           </div>`;
       } else if (window.innerWidth >= 769) {// ici on test la taille de la fenetre elle est superieur ou égale à 769px.
         contenuHtml +=
          `<img class = "picture" src= "${data.thumbnail.regular.medium}"/>
           <div class = "bookmark-circle">
+          <img class = "bookmark" src ="${bookmarked}"/>
           
           </div>`;
       } else {// ici on test la taille de la fenetre c'est l'element par defaut car on change la taille de la photo en fonction de l'element par defaut qui est le smartphone.
         contenuHtml +=
           `<img class = "picture" src= "${data.thumbnail.regular.small}">
            <div class = "bookmark-circle">
-      
+            <img class = "bookmark" src ="${bookmarked}"/>
       </div></img>`;
       }
-
-      if(data.isBookmarked == true) {
-        console.log(data.isBookmarked);
-        contenuHtml += 
-        `<img class= "bookmark bkf" src= "./assets/icon-bookmark-full.svg"/>`
-    } else {
-      contenuHtml += 
-        `<img class= "bookmark bkf" src= "./assets/icon-bookmark-empty.svg"/>`
-    }   
+    //   if(data.isBookmarked == true) {
+    //     console.log(data.isBookmarked);
+    //     contenuHtml += 
+    //     `<img class= "bookmark bkf" src= "./assets/icon-bookmark-full.svg"/>`
+    // } else {
+    //   contenuHtml += 
+    //     `<img class= "bookmark bkf" src= "./assets/icon-bookmark-empty.svg"/>`
+    // }   
       contenuHtml +=
         `<div class='info'><p class='date'> ${data.year} </p>`;
       contenuHtml +=
@@ -159,7 +164,7 @@ fetch("../data.json")
       // cardUpper.classList.add("trend-book");
       tBookmarkBg.classList.add("bookmark-circle");
       tBookmark.classList.add("bookmark"); //to look at further
-
+      
       cardBody.classList.add("trend-info");
       cardBody.classList.add("flex");
       cardBody.classList.add("flex-wrap");
@@ -187,7 +192,7 @@ fetch("../data.json")
     } else {
         tBookmark.src = "assets/icon-bookmark-empty.svg"
     }
-
+    
       //cardImage.src = movie.thumbnail.regular.small;
       tTitle.innerText = movie.title;
       tYear.innerText = movie.year;
@@ -197,8 +202,9 @@ fetch("../data.json")
       smallDot2.innerHTML = "&#x2022";
 
       card.appendChild(cardImage);
+      //tBookmarkBg.onclick="addFavorites(tBookmarkBg,movie.title)";
       card.appendChild(tBookmarkBg);
-      card.appendChild(tBookmark);
+      tBookmarkBg.appendChild(tBookmark);
       cardBody.appendChild(tYear);
       cardBody.appendChild(smallDot);
       cardBody.appendChild(categoryIcon);
@@ -206,6 +212,13 @@ fetch("../data.json")
       cardBody.appendChild(smallDot2);
       cardBody.appendChild(tRating);
       cardBody.appendChild(tTitle);
+
+
+      // document.querySelector('.bookmark-circle').addEventListener('click', e => {
+      //   //faut récupérer le titre de la carte clické 
+      // })
+      console.log(tBookmarkBg);
+      
 
       // card.appendChild(cardUpper);
       card.appendChild(cardBody);
@@ -220,3 +233,23 @@ fetch("../data.json")
 
 
                       // fin de trending
+
+                      //Bookmarked
+
+function addFavorites(e,titreFilm) {
+  //cette fonction on l'appelle lorsqu'on clique sur l'icone et la zone autour 
+  //fonction appelée dans la div class = "card-icon"
+  let imgsrc = e.querySelector(".bookmark").src; //on récupère la source de l'icone de l'élément sélectionné (e), qui est notre card-icon
+
+    if(imgsrc.includes("icon-bookmark-empty.svg")){
+        // si notre source d'image (src)contient "icon-bookmark-empty.svg" càd icone vide
+      e.querySelector(".bookmark").src="./assets/icon-bookmark-full.svg"; //on remplace l'icone vide par une icone rempli "full"
+      localStorage.setItem(titreFilm,"true");//le isbookmarked dans le local storage reprend la valeur true //à la base c'etait false vu que l'icone etait vide
+
+    }else{
+      // l'icone devient "empty" et le isbookmarked dans localstorage devient false
+      e.querySelector(".bookmark").src="./assets/icon-bookmark-empty.svg";
+      localStorage.setItem(titreFilm,"false");
+
+    }
+}
