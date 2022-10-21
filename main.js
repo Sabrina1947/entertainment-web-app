@@ -4,15 +4,17 @@ fetch("../data.json")
   .then((response) => response.json())
   .then((data) => {
     // Display my data in a loop
+<<<<<<< HEAD
     //console.log(data);
     //console.log(data.title);
+=======
+    console.log(data);
+>>>>>>> 7947730b0e1d59420f537f02056133c9198408da
     for (movie of data) {
       if (movie.isTrending === true) {
-        // console.log(movie.thumbnail.regular.small)
         const globalCards = document.createElement("div");
         const card = document.createElement("div");
         const cardImage = document.createElement("img");
-        // const cardUpper = document.createElement("div");
         const tBookmarkBg = document.createElement("div");
         const tBookmark = document.createElement("img");
 
@@ -26,12 +28,10 @@ fetch("../data.json")
         const smallDot2 = document.createElement("div");
 
         globalCards.classList.add("flex");
-        globalCards.classList.add("card-space");
-        globalCards.classList.add("scroll");
+        globalCards.classList.add("global-cards");
         card.classList.add("trend");
         cardImage.classList.add("trend-img");
         card.classList.add("m-16");
-        // cardUpper.classList.add("trend-book");
         tBookmarkBg.classList.add("bookmark-circle");
         tBookmark.classList.add("bookmark-empty"); //to look at further
 
@@ -58,7 +58,6 @@ fetch("../data.json")
         }
 
         tBookmark.src = "assets/icon-bookmark-empty.svg";
-        //cardImage.src = movie.thumbnail.regular.small;
         tTitle.innerText = movie.title;
         tYear.innerText = movie.year;
         tRating.innerText = movie.rating;
