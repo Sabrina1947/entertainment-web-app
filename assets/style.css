@@ -291,7 +291,7 @@ position: relative;
     width: 240px;
     position: relative;
     top: 18px; 
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 /* image covering container card*/
@@ -334,7 +334,7 @@ position: relative;
 .trend-info {
     height: 38px;
     width: 160px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: baseline;
     position: absolute;
     left: Opx;
@@ -354,6 +354,7 @@ position: relative;
 .t-dot {
     color: #FFFFFF;
     opacity: 50%;
+    margin: 0 10px;
 } 
 
 .t-title {
@@ -655,7 +656,7 @@ h4 .title {
     }
 
     nav ul {
-        display:flex;
+        /* display:flex; */
         flex-direction: column;
         padding-top: 65px;
         margin-left: 50px;

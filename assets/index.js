@@ -129,106 +129,152 @@ searchInput.addEventListener("input", e => {
 
                       //trending
 
+bookmarkedTrend="";
 const mainContainer = document.getElementById("trends");
 
 fetch("../data.json")
 .then((response) => response.json())
 .then((data) => {
-  // Display my data in a loop
-  //console.log(data);
-  //console.log(data.title);
-  for (movie of data) {
-    if (movie.isTrending === true) {
-      // console.log(movie.thumbnail.regular.small)
-      const globalCards = document.createElement("div");
-      const card = document.createElement("div");
-      const cardImage = document.createElement("img");
-      // const cardUpper = document.createElement("div");
-      const tBookmarkBg = document.createElement("div");
-      const tBookmark = document.createElement("img");
-
-      const cardBody = document.createElement("div");
-      const categoryIcon = document.createElement("img");
-      const tTitle = document.createElement("h5");
-      const tYear = document.createElement("p");
-      const tCategory = document.createElement("p");
-      const tRating = document.createElement("p");
-      const smallDot = document.createElement("div");
-      const smallDot2 = document.createElement("div");
-
-      globalCards.classList.add("flex");
-      globalCards.classList.add("global-cards");
-      card.classList.add("trend");
-      cardImage.classList.add("trend-img");
-      card.classList.add("m-16");
-      // cardUpper.classList.add("trend-book");
-      tBookmarkBg.classList.add("bookmark-circle");
-      tBookmark.classList.add("bookmark"); //to look at further
+    //console.log(data);
+      for(movie of data){
+    //  console.log(movie)
       
-      cardBody.classList.add("trend-info");
-      cardBody.classList.add("flex");
-      cardBody.classList.add("flex-wrap");
-      tYear.classList.add("trend-details");
-      tCategory.classList.add("trend-details");
-      tRating.classList.add("trend-details"); 
-      tTitle.classList.add("t-title");
-      smallDot.classList.add("t-dot");
-      smallDot2.classList.add("t-dot");
+      let cardHtml = 
+      `<div class="global-cards flex">
+      <div class="trend m-16">
+      `;
+      if(movie.isTrending == true){     
+      if(window.innerWidth >= 769) {
+          if(localStorage.getItem(movie.title) == "true") {
+                bookmarkedTrend = "/assets/icon-bookmark-full.svg";
+          }else{
+                bookmarkedTrend = "/assets/icon-bookmark-empty.svg";
+          }         
+          cardHtml += 
+            `<img class="trend-img" src="${movie.thumbnail.trending.large}">
+            <div onclick="addFavorites(this, '${movie.title}')" class="bookmark-circle">
+            <img class="bookmark" src ="${bookmarkedTrend}">
+            </div>`;
+        }else {
+            cardHtml += 
+            `<img class="trend-img" src="${movie.thumbnail.trending.small}">
+            <div class ="bookmark-circle">
+            <img class = "bookmark" src ="${bookmarkedTrend}">
+            </div>`
+        }   
+      
+        cardHtml +=
+          `<div class='trend-info flex flex-wrap'><p class='trend-details'> ${movie.year} </p>
+              <p class="t-dot"> &#x2022 </p>
+              <p class=" ${movie.category} ">${movie.category}</p>
+              <p class="t-dot"> &#x2022 </p>
+              <p class="trend-details"> ${movie.rating}</p>
+              <h4 class="t-title"> ${movie.title}</h4>
+            </div>`;
+        trends.innerHTML += cardHtml;
+        
+    }}});
 
-      if (window.innerWidth >= 375) {
-        cardImage.src = movie.thumbnail.trending.large;
-      } else {
-        cardImage.src = movie.thumbnail.trending.small;
-      }
+// const mainContainer = document.getElementById("trends");
 
-      if(movie.category == "Movie") {
-          categoryIcon.src = "assets/icon-category-movie.svg"
-      } else {
-          categoryIcon.src = "assets/icon-category-tv.svg"
-      }
+// fetch("../data.json")
+// .then((response) => response.json())
+// .then((data) => {
+//   // Display my data in a loop
+//   //console.log(data);
+//   //console.log(data.title);
+//   for (movie of data) {
+//     if (movie.isTrending === true) {
+//       // console.log(movie.thumbnail.regular.small)
+//       const globalCards = document.createElement("div");
+//       const card = document.createElement("div");
+//       const cardImage = document.createElement("img");
+//       // const cardUpper = document.createElement("div");
+//       const tBookmarkBg = document.createElement("div");
+//       const tBookmark = document.createElement("img");
 
-      if(movie.isBookmarked == true) {
-        tBookmark.src = "assets/icon-bookmark-full.svg"
-    } else {
-        tBookmark.src = "assets/icon-bookmark-empty.svg"
-    }
+//       const cardBody = document.createElement("div");
+//       const categoryIcon = document.createElement("img");
+//       const tTitle = document.createElement("h5");
+//       const tYear = document.createElement("p");
+//       const tCategory = document.createElement("p");
+//       const tRating = document.createElement("p");
+//       const smallDot = document.createElement("div");
+//       const smallDot2 = document.createElement("div");
+
+//       globalCards.classList.add("flex");
+//       globalCards.classList.add("global-cards");
+//       card.classList.add("trend");
+//       cardImage.classList.add("trend-img");
+//       card.classList.add("m-16");
+//       // cardUpper.classList.add("trend-book");
+//       tBookmarkBg.classList.add("bookmark-circle");
+//       tBookmark.classList.add("bookmark"); //to look at further
+      
+//       cardBody.classList.add("trend-info");
+//       cardBody.classList.add("flex");
+//       cardBody.classList.add("flex-wrap");
+//       tYear.classList.add("trend-details");
+//       tCategory.classList.add("trend-details");
+//       tRating.classList.add("trend-details"); 
+//       tTitle.classList.add("t-title");
+//       smallDot.classList.add("t-dot");
+//       smallDot2.classList.add("t-dot");
+
+//       if (window.innerWidth >= 375) {
+//         cardImage.src = movie.thumbnail.trending.large;
+//       } else {
+//         cardImage.src = movie.thumbnail.trending.small;
+//       }
+
+//       if(movie.category == "Movie") {
+//           categoryIcon.src = "assets/icon-category-movie.svg"
+//       } else {
+//           categoryIcon.src = "assets/icon-category-tv.svg"
+//       }
+
+//       if(movie.isBookmarked == true) {
+//         tBookmark.src = "assets/icon-bookmark-full.svg"
+//     } else {
+//         tBookmark.src = "assets/icon-bookmark-empty.svg"
+//     }
     
-      //cardImage.src = movie.thumbnail.regular.small;
-      tTitle.innerText = movie.title;
-      tYear.innerText = movie.year;
-      tRating.innerText = movie.rating;
-      tCategory.innerText = movie.category;
-      smallDot.innerHTML = "&#x2022";
-      smallDot2.innerHTML = "&#x2022";
+//       //cardImage.src = movie.thumbnail.regular.small;
+//       tTitle.innerText = movie.title;
+//       tYear.innerText = movie.year;
+//       tRating.innerText = movie.rating;
+//       tCategory.innerText = movie.category;
+//       smallDot.innerHTML = "&#x2022";
+//       smallDot2.innerHTML = "&#x2022";
 
-      card.appendChild(cardImage);
-      //tBookmarkBg.onclick="addFavorites(tBookmarkBg,movie.title)";
-      card.appendChild(tBookmarkBg);
-      tBookmarkBg.appendChild(tBookmark);
-      cardBody.appendChild(tYear);
-      cardBody.appendChild(smallDot);
-      cardBody.appendChild(categoryIcon);
-      cardBody.appendChild(tCategory);
-      cardBody.appendChild(smallDot2);
-      cardBody.appendChild(tRating);
-      cardBody.appendChild(tTitle);
+//       card.appendChild(cardImage);
+//       //tBookmarkBg.onclick="addFavorites(tBookmarkBg,movie.title)";
+//       card.appendChild(tBookmarkBg);
+//       tBookmarkBg.appendChild(tBookmark);
+//       cardBody.appendChild(tYear);
+//       cardBody.appendChild(smallDot);
+//       cardBody.appendChild(categoryIcon);
+//       cardBody.appendChild(tCategory);
+//       cardBody.appendChild(smallDot2);
+//       cardBody.appendChild(tRating);
+//       cardBody.appendChild(tTitle);
 
 
-      // document.querySelector('.bookmark-circle').addEventListener('click', e => {
-      //   //faut récupérer le titre de la carte clické 
-      // })
-      console.log(tBookmarkBg);
+//       // document.querySelector('.bookmark-circle').addEventListener('click', e => {
+//       //   //faut récupérer le titre de la carte clické 
+//       // })
+//       console.log(tBookmarkBg);
       
 
-      // card.appendChild(cardUpper);
-      card.appendChild(cardBody);
+//       // card.appendChild(cardUpper);
+//       card.appendChild(cardBody);
 
-      globalCards.appendChild(card);
+//       globalCards.appendChild(card);
 
-      trends.appendChild(globalCards);
-    }
-  }
-});
+//       trends.appendChild(globalCards);
+//     }
+//   }
+// });
 
 
 
